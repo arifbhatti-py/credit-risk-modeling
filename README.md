@@ -1,5 +1,10 @@
 # Credit Risk Modeling
 
+🔗 **Live App:** 
+https://credit-risk-modeling-by-arifbhatti.streamlit.app/
+
+---
+
 ## Project Overview
 
 This project focuses on building a machine learning classification model to assess the credit risk of loan applicants and predict the likelihood of loan default.
