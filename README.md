@@ -14,34 +14,19 @@ The workflow covers data cleaning, exploratory data analysis, feature engineerin
 
 The objective of this project is to help a financial institution assess the credit risk of loan applicants before approving a loan.
 
-The model predicts whether a customer is likely to **default on a loan** based on customer information, loan characteristics, and credit history. Since default cases represent a smaller portion of the dataset, handling class imbalance and prioritizing the identification of potential defaulters are important parts of the modelling process.
-
-The final model is designed to support more informed lending decisions by identifying customers with a higher likelihood of default.
+The model predicts whether a customer is likely to **default on a loan** based on customer information, loan characteristics, and credit history. Since default cases represent a smaller portion of the dataset, handling class imbalance and prioritizing the identification of potential defaulters are important parts of the modeling process.
 
 
 
-## Data Overview
+## Dataset
 
 The project uses three datasets containing customer, loan, and credit bureau information:
 
-- **Customers Data:** Customer demographics, employment, income, residence, and location details.
-- **Loans Data:** Loan characteristics, financial details, tenure, and default status.
+- **Customer Data:** Customer demographics, employment, income, residence, and location details.
+- **Loan Data:** Loan characteristics, financial details, tenure, and default status.
 - **Bureau Data:** Credit history and repayment-related information.
 
-Each dataset contains **50,000 records** and is linked using `cust_id`. The three datasets are merged to create a single dataset for credit risk analysis and modelling.
-
-
-
-## Exploratory Data Analysis
-
-The merged dataset was explored to understand the distribution of customer, loan, and credit-related variables and identify patterns associated with loan default.
-
-The analysis focused on:
-
-- Understanding the distribution of numerical and categorical features.
-- Examining the relationship between customer and loan characteristics and default.
-- Identifying potential data quality issues and outliers.
-- Investigating variables related to delinquency, credit utilization, loan tenure, and repayment behaviour.
+Each dataset contains **50,000 records**. The datasets are merged to create a single dataset for credit risk analysis and modeling.
 
 
 
@@ -91,13 +76,13 @@ Defaulted customers are more common at higher values, suggesting that longer del
 
 
 
-### Feature Selection
+## Feature Selection
 
 Multicollinearity was assessed using Variance Inflation Factor (VIF), and highly correlated features were removed to reduce redundancy.
 
 ![Correlation Heatmap](images/correlation_heatmap.png)
 
-Weight of Evidence (WOE) and Information Value (IV) were then used to evaluate the relationship between the remaining features and loan default. Features with an IV greater than `0.02` were retained for modelling.
+Weight of Evidence (WOE) and Information Value (IV) were then used to evaluate the relationship between the remaining features and loan default. Features with an IV greater than `0.02` were retained for modeling.
 
 The selected features were encoded using one-hot encoding, with one category dropped from each categorical feature to avoid redundancy.
 
@@ -123,7 +108,7 @@ On the test set, the model achieved:
 - **Recall:** 94%
 - **F1-score:** 70%
 
-The model's high recall shows that it identified a large proportion of the actual default cases.
+The model's high recall means it identified a large proportion of the actual default cases.
 
 
 ### ROC-AUC
